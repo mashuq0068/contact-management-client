@@ -48,12 +48,10 @@ The Contact Management application is built using the following technologies:
 - **Tailwind CSS**: A utility-first CSS framework for quickly building custom designs.
 - **@tanstack/react-query**: A library for managing and caching asynchronous data in React applications.
 - **Axios**: A promise-based HTTP client for making requests to API endpoints.
-- **Localforage**: A library for handling local storage with a simple API.
-- **Match-sorter**: A simple, expected, and deterministic best-match sorting of an array in JavaScript.
+- **DaisyUi**: A library of Tailwind.
 - **React Router DOM**: A declarative way to navigate and manage the state of your React applications.
 - **React Icons**: A set of customizable SVG icons for React applications.
-- **Sort-by**: A utility for sorting arrays of objects by one or more properties.
-- **SweetAlert2**: A beautiful, responsive, customizable, accessible, replacement for JavaScript's popup boxes.klj
+- **SweetAlert2**: A beautiful, responsive, customizable, accessible, replacement for JavaScript's popup .
 
 Application Live link :  https://contact-management-theta.vercel.app/
 
