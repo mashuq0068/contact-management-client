@@ -4,6 +4,24 @@ import { NavLink, } from 'react-router-dom';
 
 
 const Navbar = () => {
+    const handleAllContactsClick = () => {
+        // Navigate to the desired route
+        history.push('/allContacts');
+    
+        
+      };
+    const handleHomeClick = () => {
+        // Navigating to the desired route
+        history.push('/');
+    
+        
+      };
+    const handleAddContactsClick = () => {
+        // Navigating to the desired route
+        history.push('/addContacts');
+    
+        
+      };
 
 
     // all nav links
@@ -11,9 +29,9 @@ const Navbar = () => {
 
         <>
             <ul className='flex flex-wrap lg:justify-center items-center lg:gap-[15%] w-full lg:flex-row gap-[4vh] uppercase font-semibold'>
-                <NavLink to={'/'} className="lg:ml-0 ml-[8%]">Home</NavLink>
-                <NavLink to={'/addContacts'} className="btn btn-ghost">Add Contacts</NavLink>
-                <NavLink to={'/allContacts'} className="btn btn-ghost">All Contacts</NavLink>
+                <NavLink onClick={handleHomeClick}  to={'/'} className="lg:ml-0 ml-[8%]">Home</NavLink>
+                <NavLink onClick={handleAddContactsClick} to={'/addContacts'} className="btn btn-ghost">Add Contacts</NavLink>
+                <NavLink onClick={handleAllContactsClick} to={'/allContacts'} className="btn btn-ghost">All Contacts</NavLink>
             </ul>
 
 

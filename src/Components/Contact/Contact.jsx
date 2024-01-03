@@ -5,7 +5,9 @@ import { FaEdit, FaTrash, FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosDefault from '../../Hooks/useAxiosDefault';
 
-const Contact = ({ contact , refetch }) => {
+import { AiTwotoneMail } from "react-icons/ai";
+
+const Contact = ({ contact, refetch }) => {
     const axiosDefault = useAxiosDefault()
     const [dropdownVisible, setDropdownVisible] = useState(false);
     console
@@ -87,7 +89,7 @@ const Contact = ({ contact , refetch }) => {
                                   <p>Profile picture URL: ${result.value.profilePicture}</p>
                                   </div>
                                 `,
-                              });
+                            });
                         }
                     })
 
@@ -114,7 +116,7 @@ const Contact = ({ contact , refetch }) => {
                     .then(res => {
                         if (res?.data?.deletedCount > 0) {
                             refetch()
-                            
+
                             Swal.fire(
                                 'Deleted!',
                                 'Contact has been deleted.',
@@ -131,32 +133,32 @@ const Contact = ({ contact , refetch }) => {
     const handleMarkAsFavorite = () => {
         // Adding  mark as favorite logic here
         axiosDefault.patch(`/contacts/markedFavorite/${contact?._id}`)
-        .then(res => {
-            if(res?.data?.modifiedCount > 0) {
-                refetch()
-                Swal.fire(
-                    'Marked!',
-                    'You successfully marked the contact as favorite',
-                    'success'
-                )
-            }
-        })
+            .then(res => {
+                if (res?.data?.modifiedCount > 0) {
+                    refetch()
+                    Swal.fire(
+                        'Marked!',
+                        'You successfully marked the contact as favorite',
+                        'success'
+                    )
+                }
+            })
 
         console.log('Mark as favorite clicked');
     };
     const handleUnMarkAsFavorite = () => {
         // Adding unMark from favorite logic here
         axiosDefault.patch(`/contacts/unMarkedFavorite/${contact?._id}`)
-        .then(res => {
-            if(res?.data?.modifiedCount > 0) {
-                refetch()
-                Swal.fire(
-                    'Removed!',
-                    'You successfully removed the contact from favorite',
-                    'success'
-                )
-            }
-        })
+            .then(res => {
+                if (res?.data?.modifiedCount > 0) {
+                    refetch()
+                    Swal.fire(
+                        'Removed!',
+                        'You successfully removed the contact from favorite',
+                        'success'
+                    )
+                }
+            })
         console.log('Mark as favorite clicked');
     };
 
@@ -176,9 +178,9 @@ const Contact = ({ contact , refetch }) => {
 
 
     return (
-        
-    
-       <div className="mx-auto relative drop-shadow-xl shadow-xl right-0 mt-2 w-60">
+
+
+        <div className="mx-auto relative drop-shadow-xl shadow-xl right-0 mt-2 w-60">
             <div className="bg-white rounded lg:h-full overflow-hidden shadow-lg">
                 {/* blue color div */}
                 <div className="text-center  mx-auto p-6 bg-gradient-to-r  from-[#3490dc] to-[#6574cd] border-b">
@@ -195,7 +197,7 @@ const Contact = ({ contact , refetch }) => {
                     {/* name */}
                     <p className="pt-2 font-semibold  w-full text-gray-50">{contact?.name}</p>
                     {/* email */}
-                    <p className="text-sm text-gray-100 ">{contact?.email}</p>
+                    {/* <p className="text-sm text-gray-100 ">{contact?.email}</p> */}
                     {/* manage contact */}
                     <div className="relative mt-3 inline-block text-left" ref={dropdownRef}>
                         <button
@@ -224,27 +226,27 @@ const Contact = ({ contact , refetch }) => {
                                         Delete
                                     </button>
                                     {/* favorite */}
-                                 
-                                  { 
-                                  <div>
-                                    
-                                 { contact?.isFavorite ? <button
-                                        onClick={handleUnMarkAsFavorite}
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                                    >
-                                        <FaStar className="inline-block text-amber-500 mr-2" />
-                                      Remove  Favorite
-                                    </button> :
-                                   <button
-                                        onClick={handleMarkAsFavorite}
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                                    >
-                                        <FaStar  className="inline-block mr-2" />
-                                      mark as favorite
-                                    </button>}
-                                    </div>
+
+                                    {
+                                        <div>
+
+                                            {contact?.isFavorite ? <button
+                                                onClick={handleUnMarkAsFavorite}
+                                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                                            >
+                                                <FaStar className="inline-block text-amber-500 mr-2" />
+                                                Remove  Favorite
+                                            </button> :
+                                                <button
+                                                    onClick={handleMarkAsFavorite}
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                                                >
+                                                    <FaStar className="inline-block mr-2" />
+                                                    mark as favorite
+                                                </button>}
+                                        </div>
                                     }
-                                   
+
                                 </div>
                             </div>
                         )}
@@ -253,8 +255,8 @@ const Contact = ({ contact , refetch }) => {
                 {/* white color div */}
                 <div className="border-b">
                     {/* address */}
-                    <div href="/account/campaigns">
-                        <a className="px-4 py-2 hover:bg-gray-100 flex">
+                    <div >
+                        <a className="px-4 py-2 hover:bg-gray-100 items-center flex">
                             <div className="text-green-600">
                                 <svg
                                     fill="none"
@@ -276,9 +278,28 @@ const Contact = ({ contact , refetch }) => {
                             </div>
                         </a>
                     </div>
-                    {/* phone number */}
-                    <div href="/account/donations">
-                        <a className="px-4 py-2 hover:bg-gray-100 flex">
+                    {/* email */}
+                    <div >
+                        <a className="px-4 py-2 hover:bg-gray-100 items-center flex">
+                            <div className="text-gray-800">
+                            {/* <SiMinutemailer /> */}
+                            <AiTwotoneMail />
+
+
+                            </div>
+                            <div className="pl-3">
+                                <p className="text-sm font-medium text-gray-800 leading-none">
+                                    Email
+                                </p>
+                                <p className="text-xs mt-1 text-gray-500">
+                                    {contact?.email}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    {/* phone */}
+                    <div >
+                        <a className="px-4 py-2 hover:bg-gray-100 items-center flex">
                             <div className="text-gray-800">
                                 <svg
                                     fill="none"
@@ -329,19 +350,19 @@ const Contact = ({ contact , refetch }) => {
             </div>
             {/* star icon for marked as favorite cards */}
             <div>
-           {contact?.isFavorite && <FaStar className="inline-block text-amber-400 mr-2 absolute top-3 right-3" />   }         </div>
+                {contact?.isFavorite && <FaStar className="inline-block text-amber-400 mr-2 absolute top-3 right-3" />}         </div>
         </div>
-        
-        
-          
-       
-       
+
+
+
+
+
     );
 
 };
 Contact.propTypes = {
     contact: PropTypes.object,
-    refetch : PropTypes.func
+    refetch: PropTypes.func
 }
 
 export default Contact;

@@ -9,16 +9,21 @@ body{
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
+:root {
+ @media (min-width : 1700px) {
+   font-size: 20px;
+ }
+}
 .text-gradient {
   background: linear-gradient(45deg, #ab26b8, #47a8d4 80%);
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
-
-:root {
- @media (min-width : 1700px) {
-   font-size: 20px;
- }
+.active{
+  background: linear-gradient(45deg, #ab26b8, #47a8d4 80%);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 .profile-picture {
   height: 80px;
