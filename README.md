@@ -78,10 +78,6 @@ npm install
 # or
 yarn install
 
-## Application Deployment
-
-The Contact Management Application is deployed and accessible online. You can explore the live version by visiting the following link:
-
 
 
 End of README file
