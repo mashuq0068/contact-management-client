@@ -4,6 +4,12 @@
 
 Welcome to the Contact Hub (contact management application). I want to introduce Contact Hub as your contact management application. This platform provides services to users to manage their contacts through a user-friendly interface. Whether you're looking to add new contacts, you can use this application. Explore the simplicity of contact management with Contact Hub!
 
+## Application Deployment
+
+The Contact Management Application is deployed and accessible online. You can explore the live version by visiting the following link:
+
+[Live Application](https://contact-management-theta.vercel.app/)
+
 ## Features
 
 ### Home Page
@@ -76,6 +82,6 @@ yarn install
 
 The Contact Management Application is deployed and accessible online. You can explore the live version by visiting the following link:
 
-website live link : https://contact-management-theta.vercel.app/
+
 
 End of README file
