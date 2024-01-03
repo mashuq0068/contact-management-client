@@ -1,12 +1,60 @@
 import { VscSaveAs } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
+import useAxiosDefault from "../../Hooks/useAxiosDefault";
+import Swal from "sweetalert2";
 
 const AddContacts = () => {
     const navigate = useNavigate()
+    const axiosDefault = useAxiosDefault()
+    // handle form submit
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const form = e.target 
+        const name = form.name.value
+        const mobile = form.mobile.value 
+        const email = form.email.value 
+        const address = form.address.value 
+        const profilePicture = form.profilePicture.value
+        const contactInfo = {
+            name : name,
+            phone : mobile,
+            email : email,
+            address: address,
+            profilePicture : profilePicture
+
+           
+            
+        }
+        if(contactInfo) {
+            console.log(contactInfo)
+        //   save contact to server
+            axiosDefault.post('/contacts', contactInfo)
+              .then(res => {
+                if (res?.data?.insertedId) {
+                //   if successful showing modal
+                  Swal.fire(
+                    'Successful!',
+                    'You have successfully added the user',
+                    'success'
+                  )
+                  .then(result => {
+                    // if modal confirmed navigate to dashboard
+                    if (result.isConfirmed) {
+                      navigate('/allContacts');
+                    }
+                  });
+                }
+              })
+              // handle error to save user in server
+              .catch(error => {
+                console.error('Error:', error);
+              });
+          }
+    }
     return (
         <div className="lg:w-[40vw] md:px-0 px-5 md:py-0 py-5 rounded-md md:drop-shadow-2xl md:shadow-2xl bg-white mx-auto md:w-[70vw]  w-[90vw]">
         {/* form of add user */}
-           <form   className="md:card-body lg:drop-shadow-xl  w-full h-auto">
+           <form  onSubmit={handleSubmit} className="md:card-body lg:drop-shadow-xl  w-full h-auto">
                                   {/* name */}
                                   <div className="form-control">
                                       <label className="label">
@@ -34,7 +82,7 @@ const AddContacts = () => {
                                       <label className="label">
                                           <span className="label-text ">Address</span>
                                       </label>
-                                      <input type="text" name="name" placeholder="Address" className="input  input-bordered" required />
+                                      <input type="text" name="address" placeholder="Address" className="input  input-bordered" required />
                                   </div>
                                   {/* profile picture */}
                                   <div className="form-control">

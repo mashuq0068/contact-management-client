@@ -3,6 +3,7 @@ import Root from "../Root/Root";
 import HomePage from "../Pages/HomePage/HomePage";
 
 import AddContactsPage from "../Pages/AddContactsPage/AddContactsPage";
+import AllContactsPage from "../Pages/AllContactsPage/AllContactsPage";
 
 const router = createBrowserRouter([{
     path:'/',
@@ -15,6 +16,10 @@ const router = createBrowserRouter([{
         {
             path:'/addContacts',
             element:<AddContactsPage></AddContactsPage>
+        },
+        {
+            path:'/allContacts',
+            element:<AllContactsPage></AllContactsPage>
         }
     ]
 }])

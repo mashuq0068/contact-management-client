@@ -50,7 +50,7 @@ const Navbar = () => {
                             alt=""
 
                         />
-                        <p className=' 2xl:text-2xl text-xl md:w-auto w-[50vw] font-bold text-gradient '>User Hub</p>
+                        <p className=' 2xl:text-2xl text-xl md:w-auto w-[50vw] font-bold text-gradient '>Contact Hub</p>
                     </div>
                 </div>
                 {/* desktop nav */}
