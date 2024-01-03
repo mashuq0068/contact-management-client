@@ -76,6 +76,6 @@ yarn install
 
 The Contact Management Application is deployed and accessible online. You can explore the live version by visiting the following link:
 
-[Live Application](https://contact-management-theta.vercel.app/)
+[(https://contact-management-theta.vercel.app/)](https://contact-management-theta.vercel.app/)
 
 End of README file
