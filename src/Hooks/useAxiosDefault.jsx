@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosDefault = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://contact-management-server-indol.vercel.app",
     
 });
 const useAxiosDefault = () => {
