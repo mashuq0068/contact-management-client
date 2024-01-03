@@ -2,9 +2,13 @@
 
 ## Introduction
 
-Welcome to the Contact Hub!(contact management application). I introduce Contact Hub as your  contact management application. This platform provide services to users to  manage their contacts through a user-friendly interface. Whether you're looking to add new contacts, you can use these application. Explore the simplicity of contact management with Contact Hub!
+Welcome to the Contact Hub!(contact management application). I want to introduce Contact Hub as your contact management application. This platform provide services to users to  manage their contacts through a user-friendly interface. Whether you're looking to add new contacts, you can use these application. Explore the simplicity of contact management with Contact Hub!
 
 ## Features
+## Home Page
+- A navigation bar
+- A Banner
+- A footer
 
 ### Navigation Bar
 - A logo added
@@ -40,7 +44,7 @@ These features added in contact management
 The Contact Management application is built using the following technologies:
 
 - **React**: A JavaScript library for building user interfaces.
-- **Vite**: A fast, opinionated web dev build tool that serves your code via native ES Module imports.
+- **Vite**: A fast, opinionated web dev build tool that serves code via native ES Module imports.
 - **Tailwind CSS**: A utility-first CSS framework for quickly building custom designs.
 - **@tanstack/react-query**: A library for managing and caching asynchronous data in React applications.
 - **Axios**: A promise-based HTTP client for making requests to API endpoints.
@@ -51,6 +55,6 @@ The Contact Management application is built using the following technologies:
 - **Sort-by**: A utility for sorting arrays of objects by one or more properties.
 - **SweetAlert2**: A beautiful, responsive, customizable, accessible, replacement for JavaScript's popup boxes.klj
 
-Application Live link :  `https://contact-management-theta.vercel.app/`
+Application Live link :  https://contact-management-theta.vercel.app/
 
-Feel free to explore and manage your contacts effortlessly!
+
