@@ -34,7 +34,7 @@ const AddContacts = () => {
                 //   if successful showing modal
                   Swal.fire(
                     'Successful!',
-                    'You have successfully added the user',
+                    'You have successfully added the contact',
                     'success'
                   )
                   .then(result => {
@@ -45,7 +45,7 @@ const AddContacts = () => {
                   });
                 }
               })
-              // handle error to save user in server
+              // handle error to save contact in server
               .catch(error => {
                 console.error('Error:', error);
               });
@@ -53,7 +53,7 @@ const AddContacts = () => {
     }
     return (
         <div className="lg:w-[40vw] md:px-0 px-5 md:py-0 py-5 rounded-md md:drop-shadow-2xl md:shadow-2xl bg-white mx-auto md:w-[70vw]  w-[90vw]">
-        {/* form of add user */}
+        {/* form of add contact */}
            <form  onSubmit={handleSubmit} className="md:card-body lg:drop-shadow-xl  w-full h-auto">
                                   {/* name */}
                                   <div className="form-control">
